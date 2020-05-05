@@ -7,7 +7,7 @@ const InputTextStyle = makeStyles((theme) => ({
     borderRadius: '4px',
     backgroundColor: '#F0F2F5',
     '&:hover': {
-      backgroundColor: fade('#F0F2F5', 0.25),
+      backgroundColor: fade('#F0F2F5', 0.70),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
