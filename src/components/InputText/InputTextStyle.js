@@ -3,7 +3,6 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 const InputTextStyle = makeStyles((theme) => ({
   search: {
     position: 'relative',
-    // height: '6vh',
     borderRadius: '4px',
     backgroundColor: '#F0F2F5',
     '&:hover': {
@@ -28,6 +27,8 @@ const InputTextStyle = makeStyles((theme) => ({
     color: '#8A8C90'
   },
   inputRoot: {
+    fontFamily: 'Open Sans',
+    fontSize: '14px',
     color: '#8A8C90',
     display: 'block',
   },
