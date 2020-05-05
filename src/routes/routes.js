@@ -25,6 +25,7 @@ const Routes = () => {
             <MappedRoutes key={i} {...route} />
           ))}
           <Route component={notFound404} />
+          <Route path='/login' component={notFound404} />
         </Switch>
       </Suspense>
     </Router>

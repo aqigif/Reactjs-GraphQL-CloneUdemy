@@ -1,1 +1,29 @@
 @import "./consts";
+
+html {
+  body {
+    background: $background;
+  }
+}
+
+.header {
+  background-color: #ffffff;
+  position: fixed;
+  height: 8vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 40px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 40px;
+  box-shadow: 0px 4px 20px rgba(5, 5, 5, 0.04);
+}
+
+.logo-app-wrapper {
+  flex: 1;
+}
+.logo-app {
+  max-height: 6vh;
+}
