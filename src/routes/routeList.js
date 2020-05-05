@@ -1,22 +1,37 @@
 import { lazy} from "react";
 
 export const Layout = lazy(() => import('../components/Layout/Layout'));
-export const Splash = lazy(() => import('../features/Splash/Splash'));
-export const notFound404 = lazy(() => import('../features/errors/notFound404'));
+export const HomeDiscover = lazy(() => import('../features/Course/Pages/HomeDiscover'));
+export const MyCourse = lazy(() => import('../features/Course/Pages/MyCourse'));
+export const notFound404 = lazy(() => import('../features/errors/NotFound404'));
 
 const routeList = [
   {
     path: "/",
     component: Layout,
     hasAuth: false,
+    exact: false,
     children: [
       {
-        path: "/splash",
-        component: Splash,
-        hasAuth: false
+        path: "/home",
+        component: HomeDiscover,
+        hasAuth: false,
+        exact: true
+      },
+      {
+        path: "/myCourse",
+        component: MyCourse,
+        hasAuth: true,
+        exact: true
       }
     ]
   },
+  {
+    path: "/profile",
+    component: notFound404,
+    hasAuth: false,
+    exact: true,
+  }
 ];
 
 export default routeList;

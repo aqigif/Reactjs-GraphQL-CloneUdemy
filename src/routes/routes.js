@@ -21,7 +21,7 @@ const Routes = () => {
     <Router history={history}>
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
-          {routesData.map((route, i) => (
+          {routeList.map((route, i) => (
             <MappedRoutes key={i} {...route} />
           ))}
           <Route component={notFound404} />
@@ -32,12 +32,13 @@ const Routes = () => {
   );
 }
 
-const MappedRoutes = (route) => {
+export const MappedRoutes = (route) => {
   return (
     <Route
       path={route.path}
-      render={props => (
-        <route.component {...props} routes={route.children} />
+      exact={route.exact}
+      children={props => (
+        <route.component {...props} children={route.children} />
       )}
     />
   );

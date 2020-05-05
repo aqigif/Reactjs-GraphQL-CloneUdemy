@@ -5,3 +5,13 @@ html {
     background: $background;
   }
 }
+.wrapper {
+  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: calc(100%-30px);
+}
+
+.container {
+  position: relative;
+}

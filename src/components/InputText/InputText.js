@@ -1,6 +1,5 @@
 import React from 'react';
 import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
 import InputTextStyle from './InputTextStyle';
 
 const InputText = (props) => {

@@ -1,8 +1,8 @@
-import React, { Children } from 'react';
+import React from 'react';
 import LogoApp from './../../assets/logo-mejik-academy-1x.png';
 import InputText from '../InputText/InputText';
 import SearchIcon from '@material-ui/icons/Search';
-import { Typography, Button } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import CategoryIcon from './../../assets/category-icon.svg';
 import './header.scss';
 
@@ -11,12 +11,12 @@ const Header = (props) => {
     <div className='header'>
     <div className='header-container'>
       <div className='left-wrapper'>
-        <img src={LogoApp} className='logo-app' alt='logo' />
+        <img src={LogoApp} className='logo-app' alt='logo-app-mejik' />
       </div>
       <div className='center-wrapper'>
         <div className='category'>
           <div>
-            <img src={CategoryIcon} />
+            <img src={CategoryIcon} alt='category-mejik' />
           </div>
           <span className='category-text'>Category</span>
         </div>
