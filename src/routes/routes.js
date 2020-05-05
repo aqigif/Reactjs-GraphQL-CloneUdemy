@@ -15,7 +15,7 @@ const Routes = () => {
   if (auth) {
     routesData = routeList;
   } else {
-    routesData = routeList.filter((item) => item.hasAuth);
+    routesData = routeList.filter((item) => !item.hasAuth);
   }
   return (
     <Router history={history}>
