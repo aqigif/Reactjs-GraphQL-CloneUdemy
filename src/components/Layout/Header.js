@@ -37,9 +37,9 @@ const Header = (props) => {
             </Button>
           </div>
           <div className='margin-button-horizontal' id='button-blue'>
-          <Button variant="contained" color="primary">
-            Register
-          </Button>
+            <Button variant="contained" color="primary">
+              Register
+            </Button>
           </div>
         </div>
       </div>
