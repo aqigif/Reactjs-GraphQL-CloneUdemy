@@ -74,3 +74,12 @@
   flex: 1;
   max-width: 500px;
 }
+
+#button-blue {
+  .MuiButton-outlinedPrimary {
+    color: #387AEF;
+  }
+  .MuiButton-containedPrimary {
+    background-color: #387AEF;
+  }
+}

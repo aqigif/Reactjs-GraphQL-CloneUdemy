@@ -31,12 +31,12 @@ const Header = (props) => {
       <div className='right-wrapper'>
         <span className='mode-menu margin-button-horizontal'>Instructor</span>
         <div className='menu-auth' >
-          <div className='margin-button-horizontal'>
-          <Button variant="outlined" color="primary">
-            Login
-          </Button>
+          <div className='margin-button-horizontal' id='button-blue'>
+            <Button variant="outlined" color="primary">
+              Login
+            </Button>
           </div>
-          <div className='margin-button-horizontal'>
+          <div className='margin-button-horizontal' id='button-blue'>
           <Button variant="contained" color="primary">
             Register
           </Button>
