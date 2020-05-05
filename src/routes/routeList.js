@@ -13,7 +13,7 @@ const routeList = [
     exact: false,
     children: [
       {
-        path: "/home",
+        path: "/",
         component: HomeDiscover,
         hasAuth: false,
         exact: true
@@ -29,7 +29,7 @@ const routeList = [
   {
     path: "/profile",
     component: notFound404,
-    hasAuth: false,
+    hasAuth: true,
     exact: true,
   }
 ];

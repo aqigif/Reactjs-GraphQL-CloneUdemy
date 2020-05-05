@@ -1,5 +1,5 @@
 import React from 'react';
-import './Course.scss';
+import './CourseCard.scss';
 
 const CourseCard = (props) => {
   const { thumbnail, title, description, onClick} = props;

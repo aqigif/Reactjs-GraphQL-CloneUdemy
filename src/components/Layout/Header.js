@@ -5,13 +5,17 @@ import SearchIcon from '@material-ui/icons/Search';
 import { Button } from '@material-ui/core';
 import CategoryIcon from './../../assets/category-icon.svg';
 import './header.scss';
+import { withRouter } from 'react-router-dom';
 
 const Header = (props) => {
+  const {
+    history
+  } = props;
   return (
     <div className='header'>
     <div className='header-container'>
       <div className='left-wrapper'>
-        <img src={LogoApp} className='logo-app' alt='logo-app-mejik' />
+        <img src={LogoApp} className='logo-app' alt='logo-app-mejik' onClick={()=> history.push('/home')} />
       </div>
       <div className='center-wrapper'>
         <div className='category'>
@@ -48,4 +52,4 @@ const Header = (props) => {
   );
 }
 
-export default Header;
+export default withRouter(Header);
