@@ -4,3 +4,100 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.course-detail-container-card{
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-left: 150px;
+  padding: 32px;
+  margin-right: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.title-course-detail {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  color: #050505;
+  margin-bottom: 5px;
+}
+
+.title-course-section {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  color: #050505;
+  flex: 1;
+}
+
+.info-course-section{
+}
+
+.desc-course-detail {
+  margin-top: 5px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  color: #8A8C90;
+  margin-bottom: 20px;
+}
+
+.preview-course-detail {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  img {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+  }
+  iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+  }
+}
+
+.course-detail-wrapper {
+  flex:1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.course-section-wrapper {
+  flex:1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.course-preview-wrapper {
+  flex:1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.total-lectures{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 10px
+}

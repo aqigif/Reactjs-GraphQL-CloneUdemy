@@ -15,3 +15,39 @@ html {
 .container {
   position: relative;
 }
+
+#button-blue {
+  .MuiButton-outlinedPrimary {
+    color: #387AEF;
+    text-transform: none;
+  }
+  .MuiButton-containedPrimary {
+    background-color: #387AEF;
+    text-transform: none;
+  }
+}
+
+#button-primary {
+  .MuiButton-outlinedPrimary {
+    color: $primary;
+    text-transform: none;
+  }
+  .MuiButton-containedPrimary {
+    background-color: $primary;
+    text-transform: none;
+  }
+}
+
+.link-blue {
+  color: $blue;
+  cursor: pointer;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;  
+}
+
+.link-blue :hover{
+  opacity: 0.7;
+}
