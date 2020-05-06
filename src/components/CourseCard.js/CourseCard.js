@@ -6,7 +6,7 @@ const CourseCard = (props) => {
   return (
     <div className="course-card-container" onClick={onClick}>
       <div className="thumbnail-wrapper">
-        <img src={thumbnail} alt='thumbnail' />
+        <img src={thumbnail} />
       </div>
       <div className='course-card-info'>
         <span className="thumbnail-title">{title}</span>

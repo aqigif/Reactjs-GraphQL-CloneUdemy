@@ -1,22 +1,31 @@
 import React from 'react';
+import { useQuery } from '@apollo/react-hooks';
 import '../../Course/Course.scss';
 import CourseCard from '../../../components/CourseCard.js/CourseCard';
+import { GET_COURSES } from '../actions';
+import { withRouter } from 'react-router-dom';
 
-const HomeDiscover = () => {
+const HomeDiscover = (props) => {
+  const { loading, error, data } = useQuery(GET_COURSES);
+  const dataCourses = data?.courses;
+  const goToCourseDetail = (id) => {
+    const { history } = props;
+    history.push(`/course/${id}`);
+  }
   return (
     <div className="course-list-container">
       <div className="course-list">
-        {["","","","","","","","","","",""].map((item, i) =>(
+        {dataCourses && dataCourses.map((item, i) =>(
           <CourseCard
             key={i}
-            thumbnail={'https://www.animationvideo.co/wp-content/uploads/2017/12/How-to-video.jpg'}
-            title="The Complete tutorial adasd dasdasd asddas dasd"
-            description="Lorem ipsumsaasadasdasdasdsadasdasdkasjkdaskjda"
-            onClick={(e) => console.log(e)}
+            thumbnail={item.cover}
+            title={item.title}
+            description={item.description}
+            onClick={(e) => goToCourseDetail(item.id)}
           />))}
       </div>
     </div>
   );
 }
 
-export default HomeDiscover;
+export default withRouter(HomeDiscover);

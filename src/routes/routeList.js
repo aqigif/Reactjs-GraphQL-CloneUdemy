@@ -20,7 +20,7 @@ const routeList = [
         exact: true
       },
       {
-        path: "/course-detail",
+        path: "/course/:id",
         component: CourseDetail,
         hasAuth: false,
         exact: true

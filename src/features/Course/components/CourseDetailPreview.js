@@ -3,12 +3,13 @@ import '../../Course/Course.scss';
 import { Button } from '@material-ui/core';
 
 const CourseDetailPreview = (props) => {
+  const { title, description, thumbnail } = props;
   return (
     <div className="course-detail-container-card">
       <div className="course-detail-wrapper">
-        <span className="title-course-detail">The completeasdkasdas asdasdasd a</span>
+        <span className="title-course-detail">{title}</span>
         <span className="desc-course-detail">
-          Become a full-stack web developer with just one course. HTML, CSS, Javascript, Node, React, MongoDB and more!
+          {description}
         </span>
         <div id='button-primary'>
           <Button variant="contained" color="primary">
@@ -18,9 +19,9 @@ const CourseDetailPreview = (props) => {
       </div>
       <div className="course-preview-wrapper">
         <div className="preview-course-detail">
-        <iframe 
-          src="https://www.youtube.com/embed/tgbNymZ7vqY">
-        </iframe>
+        <img 
+          src={thumbnail}
+        />
         </div>
       </div>
     </div>
