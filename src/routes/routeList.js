@@ -2,6 +2,7 @@ import { lazy} from "react";
 
 export const Layout = lazy(() => import('../components/Layout/Layout'));
 export const HomeDiscover = lazy(() => import('../features/Course/Pages/HomeDiscover'));
+export const HomeInstructor = lazy(() => import('../features/InstructorCourse/Pages/InstructorCourse'));
 export const CourseDetail = lazy(() => import('../features/Course/Pages/CourseDetail'));
 export const MyCourse = lazy(() => import('../features/Course/Pages/MyCourse'));
 export const Login = lazy(() => import('../features/Auth/Pages/Login'));
@@ -31,6 +32,12 @@ const routeList = [
         component: MyCourse,
         hasAuth: true,
         exact: true
+      },
+      {
+        path: "/home",
+        component: HomeDiscover,
+        hasAuth: true,
+        exact: true
       }
     ]
   },
@@ -51,7 +58,7 @@ export const routeInstructorList = [
     children: [
       {
         path: "/",
-        component: HomeDiscover,
+        component: HomeInstructor,
         hasAuth: false,
         exact: true
       },
@@ -63,7 +70,13 @@ export const routeInstructorList = [
       },
       {
         path: "/my-course",
-        component: MyCourse,
+        component: HomeInstructor,
+        hasAuth: true,
+        exact: true
+      },
+      {
+        path: "/home",
+        component: HomeDiscover,
         hasAuth: true,
         exact: true
       }

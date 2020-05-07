@@ -1,0 +1,41 @@
+.modal-title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  /* Black */
+
+  color: #050505;
+
+  margin-bottom: 30px;
+}
+.modal-label {
+  margin-bottom: 10px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  /* Black */
+
+  color: #050505;
+}
+
+.modal-action{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}

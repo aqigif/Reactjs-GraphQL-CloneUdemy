@@ -26,7 +26,7 @@ const Header = (props) => {
     <div className='header'>
     <div className='header-container'>
       <div className='left-wrapper'>
-        <img src={LogoApp} className='logo-app' alt='logo-app-mejik' onClick={()=> history.push('/')} />
+        <img src={LogoApp} className='logo-app' alt='logo-app-mejik' onClick={()=> history.push('/home')} />
       </div>
       <div className='center-wrapper'>
         <div className='category'>
@@ -45,7 +45,7 @@ const Header = (props) => {
       </div>
       {authcheck() ?
       <div className='right-wrapper'>
-        <span className='mode-menu margin-button-horizontal'>My Course</span>
+        <span className='mode-menu margin-button-horizontal' onClick={()=> history.push('/my-course')}>My Course</span>
         <div className='menu-auth' >
           <div className='margin-button-horizontal' id='button-primary'>
             <Button variant="outlined" color="primary" onClick={switchUser}>

@@ -17,9 +17,9 @@ const Routes = () => {
   const auth = authcheck();
   const routes = usermode() ? routeInstructorList : routeList;
   if (auth) {
-    routesData = routeList;
+    routesData = routes;
   } else {
-    routesData = routeList.filter((item) => !item.hasAuth);
+    routesData = routes.filter((item) => !item.hasAuth);
   }
   return (
     <Router history={history}>

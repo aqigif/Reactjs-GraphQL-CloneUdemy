@@ -54,7 +54,7 @@ const Login = (props) => {
           setOpen(true);
           snackbar('Sorry, Invalid Login', 'error')
         } else {
-          localStorage.setItem('token', data?.data?.token);
+          localStorage.setItem('token', data?.data?.login?.token);
           props.history.push('/');
         }
       });
