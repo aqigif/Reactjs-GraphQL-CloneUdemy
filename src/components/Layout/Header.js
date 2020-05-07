@@ -15,7 +15,7 @@ const Header = (props) => {
     <div className='header'>
     <div className='header-container'>
       <div className='left-wrapper'>
-        <img src={LogoApp} className='logo-app' alt='logo-app-mejik' onClick={()=> history.push('/home')} />
+        <img src={LogoApp} className='logo-app' alt='logo-app-mejik' onClick={()=> history.push('/')} />
       </div>
       <div className='center-wrapper'>
         <div className='category'>
@@ -36,7 +36,7 @@ const Header = (props) => {
         <span className='mode-menu margin-button-horizontal'>Instructor</span>
         <div className='menu-auth' >
           <div className='margin-button-horizontal' id='button-blue'>
-            <Button variant="outlined" color="primary">
+            <Button variant="outlined" color="primary" onClick={() => props.history.push('/login')}>
               Login
             </Button>
           </div>

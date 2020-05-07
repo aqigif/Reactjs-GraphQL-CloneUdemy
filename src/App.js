@@ -10,9 +10,9 @@ import { client } from './utils/client';
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <Routes />
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </ApolloProvider>
   );
 }

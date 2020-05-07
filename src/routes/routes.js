@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
-import routeList, { notFound404 } from './routeList';
+import routeList, { notFound404, Login } from './routeList';
 const history = createBrowserHistory();
 
 const Routes = () => {
@@ -22,11 +22,11 @@ const Routes = () => {
     <Router history={history}>
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
+          <Route path='/login' component={Login} exact/>
           {routesData.map((route, i) => (
             <MappedRoutes key={i} {...route} />
           ))}
           <Route component={notFound404} />
-          <Route path='/login' component={notFound404} />
         </Switch>
       </Suspense>
     </Router>
