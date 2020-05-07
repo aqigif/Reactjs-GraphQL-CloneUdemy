@@ -7,13 +7,15 @@ import {
 } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
-import routeList, { notFound404, Login } from './routeList';
+import routeList, { notFound404, Login, routeInstructorList } from './routeList';
 import authcheck from "../utils/authcheck";
+import usermode from "../utils/usermode";
 const history = createBrowserHistory();
 
 const Routes = () => {
   let routesData;
   const auth = authcheck();
+  const routes = usermode() ? routeInstructorList : routeList;
   if (auth) {
     routesData = routeList;
   } else {

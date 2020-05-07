@@ -42,4 +42,39 @@ const routeList = [
   }
 ];
 
+export const routeInstructorList = [
+  {
+    path: "/",
+    component: Layout,
+    hasAuth: false,
+    exact: false,
+    children: [
+      {
+        path: "/",
+        component: HomeDiscover,
+        hasAuth: false,
+        exact: true
+      },
+      {
+        path: "/course/:id",
+        component: CourseDetail,
+        hasAuth: false,
+        exact: true
+      },
+      {
+        path: "/my-course",
+        component: MyCourse,
+        hasAuth: true,
+        exact: true
+      }
+    ]
+  },
+  {
+    path: "/profile",
+    component: notFound404,
+    hasAuth: true,
+    exact: true,
+  }
+];
+
 export default routeList;

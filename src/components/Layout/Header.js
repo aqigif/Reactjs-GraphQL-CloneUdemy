@@ -7,11 +7,21 @@ import './header.scss';
 import { withRouter } from 'react-router-dom';
 import SearcBox from '../InputText/SearchBox';
 import authcheck from '../../utils/authcheck';
+import usermode from '../../utils/usermode';
 
 const Header = (props) => {
   const {
     history
   } = props;
+  const switchUser = () => {
+    if(usermode()){
+      localStorage.setItem('userMode','student');
+    } else {
+      localStorage.setItem('userMode', 'instructor');
+    }
+    history.push('/')
+    window.location.reload()
+  }
   return (
     <div className='header'>
     <div className='header-container'>
@@ -33,12 +43,22 @@ const Header = (props) => {
           />
         </div>
       </div>
-      {!authcheck() &&
+      {authcheck() ?
+      <div className='right-wrapper'>
+        <span className='mode-menu margin-button-horizontal'>My Course</span>
+        <div className='menu-auth' >
+          <div className='margin-button-horizontal' id='button-primary'>
+            <Button variant="outlined" color="primary" onClick={switchUser}>
+              {usermode() ? 'Switch to Student View' : 'Switch to Instructor View'}
+            </Button>
+          </div>
+        </div>
+      </div>:
       <div className='right-wrapper'>
         <span className='mode-menu margin-button-horizontal'>Instructor</span>
         <div className='menu-auth' >
           <div className='margin-button-horizontal' id='button-blue'>
-            <Button variant="outlined" color="primary" onClick={() => props.history.push('/login')}>
+            <Button variant="outlined" color="primary" onClick={() => history.push('/login')}>
               Login
             </Button>
           </div>
