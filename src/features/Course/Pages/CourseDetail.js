@@ -2,7 +2,7 @@ import React from 'react';
 import '../../Course/Course.scss';
 import { Button } from '@material-ui/core';
 import CourseDetailPreview from './../components/CourseDetailPreview';
-import CourseDetailTableOfContent from './../components/CourseDetailTableOfContent';
+import CourseDetailCurriculum from './../components/CourseDetailCurriculum';
 import { GET_COURSE_BY_ID } from '../actions';
 import { withRouter } from 'react-router-dom';
 import { useQuery } from 'react-apollo';
@@ -22,8 +22,8 @@ const MyCourse = (props) => {
         title={dataCourse?.title}
         description={dataCourse?.description}
       />
-      <CourseDetailTableOfContent 
-        totalLectures={0}
+      <CourseDetailCurriculum 
+        id={id}
       />
     </div>
   );

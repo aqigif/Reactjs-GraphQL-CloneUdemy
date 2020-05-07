@@ -19,3 +19,23 @@ query ($id: String!) {
     description
   }
 }`;
+
+export const GET_SECTION_BY_COURSE_ID = gql`
+query ($id: String!) {
+  sectionsConnection(where: {
+    courseId: $id
+  }){
+    data {
+      id
+      title
+      lectures {
+        id
+        title
+        thumbnail
+        description
+        embedLink
+      }
+    }
+  }
+}
+`
