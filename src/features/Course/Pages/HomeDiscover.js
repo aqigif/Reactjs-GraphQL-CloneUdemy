@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 const HomeDiscover = (props) => {
   const { loading, error, data } = useQuery(GET_COURSES);
-  const dataCourses = data?.courses;
+  const dataCourses = data?.coursesConnection?.data;
   const goToCourseDetail = (id) => {
     const { history } = props;
     history.push(`/course/${id}`);

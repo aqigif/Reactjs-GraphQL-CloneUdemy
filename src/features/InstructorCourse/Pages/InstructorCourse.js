@@ -39,7 +39,7 @@ const HomeDiscover = (props) => {
   // getModalStyle is not a pure function, we roll the style only on the first render
 
   const { loading, error, data } = useQuery(GET_COURSES);
-  const dataCourses = data?.courses;
+  const dataCourses = data?.coursesConnection?.data;
   
   const goToCourseDetail = (id) => {
     const { history } = props;
@@ -75,19 +75,25 @@ const HomeDiscover = (props) => {
   };
 
   const handleChange = (prop) => async (event) => {
+    console.log({...values, [prop]: event?.target ? event.target.value : event })
     setValues({ ...values, [prop]: event?.target ? event.target.value : event  });
   };
   const onUploadChange = async(event) => {
     const photo = event.target.files[0];
-    handleChange('cover')(photo);
-    const data = new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(photo);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
-    const base64 = await data;
-    handleChange('coverView')(base64);
+    if(photo){
+      const data = new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(photo);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+      });
+      const base64 = await data;
+      setValues({
+        ...values,
+        cover: photo,
+        coverView: base64
+      })
+    }
   }
   const handleCancel = () => {
     setValues({
@@ -100,6 +106,9 @@ const HomeDiscover = (props) => {
   }
 
   const createCourse = () => {
+    const formData = new FormData();
+    formData.append("cover", values.cover);
+    console.log(formData, values.cover)
     if(values.title) {
     fetch(apiUrl, {
       method: 'POST',

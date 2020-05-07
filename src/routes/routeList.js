@@ -79,6 +79,12 @@ export const routeInstructorList = [
         component: HomeDiscover,
         hasAuth: true,
         exact: true
+      },
+      {
+        path: "/course/:id/section/:idSection/lecture/:idLecture",
+        component: HomeDiscover,
+        hasAuth: true,
+        exact: true
       }
     ]
   },

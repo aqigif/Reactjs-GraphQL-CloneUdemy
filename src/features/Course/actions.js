@@ -2,11 +2,15 @@ import { gql } from 'apollo-boost';
 
 export const GET_COURSES = gql`
 {
-  courses {
-    id
-    title
-    description
-    cover
+  coursesConnection(orderBy:createdAt_DESC, limit: 100){
+    total
+    limit
+    data {
+      id
+      title
+      description
+      cover
+    }
   }
 }`;
 
