@@ -43,7 +43,7 @@ const HomeDiscover = (props) => {
   
   const goToCourseDetail = (id) => {
     const { history } = props;
-    // history.push(`/course/${id}`);
+    history.push(`/course/${id}`);
   }
   const [open, setOpen] = React.useState(false);
   const [openSnackbar, setOpenSnackbar] = React.useState(false);

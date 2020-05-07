@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../Course/Course.scss';
 import { Button } from '@material-ui/core';
+import usermode from '../../../utils/usermode';
 
 const CourseDetailPreview = (props) => {
   const { title, description, thumbnail, onClick } = props;
@@ -12,9 +13,9 @@ const CourseDetailPreview = (props) => {
           {description}
         </span>
         <div id='button-primary'>
-          <Button variant="contained" color="primary" onClick={onClick}>
+        {!usermode()&&<Button variant="contained" color="primary" onClick={onClick}>
             Enroll in Course
-          </Button>
+          </Button>}
         </div>
       </div>
       <div className="course-preview-wrapper">
