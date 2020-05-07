@@ -6,6 +6,7 @@ import CategoryIcon from './../../assets/category-icon.svg';
 import './header.scss';
 import { withRouter } from 'react-router-dom';
 import SearcBox from '../InputText/SearchBox';
+import authcheck from '../../utils/authcheck';
 
 const Header = (props) => {
   const {
@@ -32,6 +33,7 @@ const Header = (props) => {
           />
         </div>
       </div>
+      {!authcheck() &&
       <div className='right-wrapper'>
         <span className='mode-menu margin-button-horizontal'>Instructor</span>
         <div className='menu-auth' >
@@ -46,7 +48,7 @@ const Header = (props) => {
             </Button>
           </div>
         </div>
-      </div>
+      </div>}
       </div>
     </div>
   );

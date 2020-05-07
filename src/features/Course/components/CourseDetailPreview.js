@@ -3,7 +3,7 @@ import '../../Course/Course.scss';
 import { Button } from '@material-ui/core';
 
 const CourseDetailPreview = (props) => {
-  const { title, description, thumbnail } = props;
+  const { title, description, thumbnail, onClick } = props;
   return (
     <div className="course-detail-container-card">
       <div className="course-detail-wrapper">
@@ -12,7 +12,7 @@ const CourseDetailPreview = (props) => {
           {description}
         </span>
         <div id='button-primary'>
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={onClick}>
             Enroll in Course
           </Button>
         </div>

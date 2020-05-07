@@ -6,6 +6,7 @@ import CourseDetailCurriculum from './../components/CourseDetailCurriculum';
 import { GET_COURSE_BY_ID } from '../actions';
 import { withRouter } from 'react-router-dom';
 import { useQuery } from 'react-apollo';
+import authcheck from '../../../utils/authcheck';
 
 const MyCourse = (props) => {
   const { match } = props;
@@ -15,12 +16,20 @@ const MyCourse = (props) => {
     variables: { id },
   });
   const dataCourse = data?.course;
+  const enroll = () => {
+    if(authcheck()) {
+
+    } else {
+      props.history.push('/login')
+    }
+  }
   return (
     <div className="course-detail-container">
       <CourseDetailPreview
         thumbnail={dataCourse?.cover}
         title={dataCourse?.title}
         description={dataCourse?.description}
+        onClick={enroll}
       />
       <CourseDetailCurriculum 
         id={id}

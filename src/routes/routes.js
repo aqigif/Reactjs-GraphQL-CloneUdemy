@@ -8,11 +8,12 @@ import {
 import { createBrowserHistory } from "history";
 
 import routeList, { notFound404, Login } from './routeList';
+import authcheck from "../utils/authcheck";
 const history = createBrowserHistory();
 
 const Routes = () => {
   let routesData;
-  const auth = false;
+  const auth = authcheck();
   if (auth) {
     routesData = routeList;
   } else {
@@ -53,7 +54,7 @@ const RenderedRoute = (Component, children) => (props) => {
   const { location } = props;
   const { pathname } = location;
   let childData
-  const auth = false;
+  const auth = authcheck();
   if (auth) {
     childData = children;
   } else {

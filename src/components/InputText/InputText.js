@@ -6,18 +6,12 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 const InputText = (props) => {
-  const { placeholder, onChange, type } = props;
+  const { placeholder, onChange, type, value } = props;
 
   const [values, setValues] = React.useState({
-    password: '',
     showPassword: false,
   });
   const classes = InputTextStyle();
-
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-    onChange(event)
-  };
 
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
@@ -30,13 +24,14 @@ const InputText = (props) => {
   return (
     <div className={classes.container}>
       <InputBase
-        onChange={handleChange}
+        onChange={onChange}
         placeholder={placeholder}
+        value={value}
         classes={{
           root: classes.inputRoot,
           input: classes.inputInput,
         }}
-        type={(values.showPassword && type === 'password') ? 'text' : 'password'}
+        type={(values.showPassword ? 'text' : type)}
         endAdornment={ type === 'password' &&
           <InputAdornment position="end">
             <IconButton

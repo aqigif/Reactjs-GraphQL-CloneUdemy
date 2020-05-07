@@ -18,7 +18,7 @@ const routeList = [
         path: "/",
         component: HomeDiscover,
         hasAuth: false,
-        exact: false
+        exact: true
       },
       {
         path: "/course/:id",
