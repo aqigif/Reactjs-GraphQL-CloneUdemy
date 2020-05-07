@@ -161,7 +161,6 @@ const HomeDiscover = (props) => {
       </div>
     </div>
   );
-
   return (
     <div className="course-list-container">
       <div className="course-headers">

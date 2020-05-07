@@ -1,13 +1,14 @@
 import React from 'react';
 import LogoApp from './../../assets/logo-mejik-academy-1x.png';
 import SearchIcon from '@material-ui/icons/Search';
-import { Button } from '@material-ui/core';
+import { Button, IconButton } from '@material-ui/core';
 import CategoryIcon from './../../assets/category-icon.svg';
 import './header.scss';
 import { withRouter } from 'react-router-dom';
 import SearcBox from '../InputText/SearchBox';
 import authcheck from '../../utils/authcheck';
 import usermode from '../../utils/usermode';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const Header = (props) => {
   const {
@@ -21,6 +22,10 @@ const Header = (props) => {
     }
     history.push('/')
     window.location.reload()
+  }
+  const logout = () => {
+    localStorage.clear();
+    history.push('/login')
   }
   return (
     <div className='header'>
@@ -51,6 +56,11 @@ const Header = (props) => {
             <Button variant="outlined" color="primary" onClick={switchUser}>
               {usermode() ? 'Switch to Student View' : 'Switch to Instructor View'}
             </Button>
+          </div>
+          <div className='margin-button-horizontal' id='button-primary'>
+            <IconButton variant="outlined" color="primary" onClick={logout}>
+              <ExitToAppIcon />
+            </IconButton>
           </div>
         </div>
       </div>:
