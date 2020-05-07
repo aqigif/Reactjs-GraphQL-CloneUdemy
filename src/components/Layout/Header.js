@@ -1,11 +1,11 @@
 import React from 'react';
 import LogoApp from './../../assets/logo-mejik-academy-1x.png';
-import InputText from '../InputText/InputText';
 import SearchIcon from '@material-ui/icons/Search';
 import { Button } from '@material-ui/core';
 import CategoryIcon from './../../assets/category-icon.svg';
 import './header.scss';
 import { withRouter } from 'react-router-dom';
+import SearcBox from '../InputText/SearchBox';
 
 const Header = (props) => {
   const {
@@ -25,7 +25,7 @@ const Header = (props) => {
           <span className='category-text'>Category</span>
         </div>
         <div className='search-wrapper'>
-          <InputText
+          <SearcBox
             placeholder='Search course here ....'
             iconAffix={<SearchIcon />}
             onChange={e => console.log(e)}

@@ -1,4 +1,110 @@
 .login-container {
   background-color: #8854D0;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-welcome{
+  margin-top: 40px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 40px;
+  /* identical to box height */
+  text-align: center;
+  /* White */
+  color: #FFFFFF;
+}
+
+.login-welcome-desc{
+  /* Login and start managing your learning process! */
+  margin-top: 10px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  width: 330px;
+  /* White */
+
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+
+.email-group {
+  margin-top: 10px;
+}
+
+.email-input {
+  margin-top: 5px;
+  width: 360px;
+}
+
+.email-label {
+  color: #FFFFFF;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.opsional-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+}
+
+.keep-me-sign-group {
+  label {
+    .Mui-checked {
+      color: #FAC024 !important;
+    }
+    .MuiCheckbox-root{
+      color: #ffffff
+    }
+    .MuiTypography-body1{
+      color: #ffffff;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+.forgot-pass {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Yellow */
+  color: #FAC024;
+}
+
+.register {
+  margin-top: 10px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Yellow */
+  color: #FAC024;
 }
