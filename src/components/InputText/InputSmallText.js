@@ -3,7 +3,7 @@ import InputBase from '@material-ui/core/InputBase';
 import InputSmallTextStyle from './InputSmallTextStyle';
 
 const InputSmallText = (props) => {
-  const { placeholder, onChange, type, value } = props;
+  const { placeholder, onChange, rows, value } = props;
 
   const [values, setValues] = React.useState({
     showPassword: false,
@@ -24,6 +24,8 @@ const InputSmallText = (props) => {
         onChange={onChange}
         placeholder={placeholder}
         value={value}
+        rows={rows}
+        multiline={rows?true:false}
         classes={{
           root: classes.inputRoot,
           input: classes.inputInput,

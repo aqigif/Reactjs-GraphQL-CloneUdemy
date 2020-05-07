@@ -100,7 +100,7 @@ const HomeDiscover = (props) => {
   }
 
   const createCourse = () => {
-    console.log(localStorage.getItem('token'))
+    if(values.title) {
     fetch(apiUrl, {
       method: 'POST',
       headers: {
@@ -137,14 +137,22 @@ const HomeDiscover = (props) => {
           handleCancel();
         }
       });
+    } else {
+      setOpenSnackbar(true);
+      setSnackbar({
+        message: 'Sorry, Course title is required', 
+        severity: 'error'
+      });
+
+    }
   }
   const body = (
     <div className={classes.paper}>
       <span className='modal-title'>Create New Course</span>
       <span className='modal-label'>Course Title</span>
-      <InputSmallText onChange={handleChange('title')} value={values.title}/>
+      <InputSmallText onChange={handleChange('title')} value={values.title} placeholder="e.g. Learn Javascript from Scratch"/>
       <span className='modal-label'>Descriptions</span>
-      <InputSmallText onChange={handleChange('description')} value={values.description}/>
+      <InputSmallText onChange={handleChange('description')} value={values.description} placeholder="Build and deploy fullstack web apps with NodeJS, React, Redux, Express, and MongoDB" rows={3} />
       <span className='modal-label'>Cover</span>
       <Dropzone onChange={onUploadChange} value={values.coverView} />
       <div className='modal-action' >

@@ -16,6 +16,10 @@ function Alert(props) {
 
 const Login = (props) => {
   const [open, setOpen] = React.useState(false);
+  const [snackbar, setSnackbar] = React.useState({
+    message: '',
+    severity: ''
+  });
   const [values, setValues] = React.useState({
     email: '',
     password: ''
@@ -32,6 +36,7 @@ const Login = (props) => {
   };
 
   const onLogin = () => {
+    if(values.email && values.password) {
     fetch(apiUrl, {
       method: 'POST',
       headers: {
@@ -50,14 +55,25 @@ const Login = (props) => {
     })
       .then(r => r.json())
       .then(data => {
-        if(data.errors){
+        if(data?.errors){
           setOpen(true);
-          snackbar('Sorry, Invalid Login', 'error')
+          setSnackbar({
+            message:`Sorry, ${data?.errors[0]?.message}`, 
+            severity:'error'
+          })
         } else {
+          console.log(data.errors)
           localStorage.setItem('token', data?.data?.login?.token);
           props.history.push('/');
         }
       });
+    } else {
+      setOpen(true);
+      setSnackbar({
+        message:`Please, complete all fields`, 
+        severity:'error'
+      })
+    }
   }
 
   const handleClose = (event, reason) => {
@@ -67,14 +83,6 @@ const Login = (props) => {
 
     setOpen(false);
   };
-
-  const snackbar = (message, severity) => (
-    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-      <Alert onClose={handleClose} severity={severity}>
-        {message}
-      </Alert>
-    </Snackbar>
-  )
   
   return (
     <div className="login-container">
@@ -105,6 +113,14 @@ const Login = (props) => {
         </Button>
       </div>
       <span className="register">Don't you have an account yet? Register here</span>
+      <Snackbar 
+        anchorOrigin={{ vertical:'bottom', horizontal:'right' }}
+        open={open} autoHideDuration={5000}
+        onClose={handleClose}>
+        <Alert onClose={handleClose} severity={snackbar.severity}>
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
